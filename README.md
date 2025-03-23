@@ -44,7 +44,7 @@ tqdm>=4.65.0
 ### Setup Instructions
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/Ballbrek26/AI-Integrative-IDS_project.git
 cd AI-Integrative-IDS
 ```
 
@@ -74,16 +74,16 @@ This command will:
 ### 2. Run the IDS
 Start monitoring network traffic:
 ```bash
-sudo python3 -m ids.run_ids --interface eth0 --model normal_traffic.csv
+sudo python3 -m ids.run_ids --interface lo --model normal_traffic.csv
 ```
 Parameters:
-- `--interface`: Network interface to monitor (default: eth0)
+- `--interface`: Network interface to monitor (default: lo)
 - `--model`: Path to training data file (default: normal_traffic.csv)
 
 ### 3. Generate Test Traffic (Optional)
 For testing the IDS, you can generate suspicious traffic patterns:
 ```bash
-sudo python3 -m ids.generate_suspicious_traffic --target [target-ip] --interface eth0 --attack all
+sudo python3 -m ids.generate_suspicious_traffic --target [target-ip] --interface lo --attack all
 ```
 Attack options:
 - `all`: Run all attack types
